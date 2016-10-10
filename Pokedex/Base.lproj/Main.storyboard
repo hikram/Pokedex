@@ -30,12 +30,25 @@
                                             <constraint firstAttribute="height" constant="34" id="Y5g-DO-cb1"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7D-FE-t5o">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="6xh-8f-SjQ"/>
+                                            <constraint firstAttribute="width" constant="24" id="tKK-KL-wGh"/>
+                                        </constraints>
+                                        <state key="normal" image="sound"/>
+                                        <connections>
+                                            <action selector="musicBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sKA-6c-nzf"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.8784313725490196" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="2i8-Ql-uNg"/>
+                                    <constraint firstAttribute="trailing" secondItem="f7D-FE-t5o" secondAttribute="trailing" constant="8" id="6Vi-8W-vhi"/>
                                     <constraint firstItem="v2J-m0-s3s" firstAttribute="centerX" secondItem="JDY-hN-4ox" secondAttribute="centerX" id="7Xj-96-pW1"/>
+                                    <constraint firstItem="f7D-FE-t5o" firstAttribute="top" secondItem="JDY-hN-4ox" secondAttribute="top" constant="26" id="C6d-iv-ORI"/>
                                     <constraint firstItem="v2J-m0-s3s" firstAttribute="centerY" secondItem="JDY-hN-4ox" secondAttribute="centerY" constant="7" id="Chb-BU-U95"/>
+                                    <constraint firstAttribute="bottom" secondItem="f7D-FE-t5o" secondAttribute="bottom" constant="12" id="xCL-Mv-nTw"/>
                                 </constraints>
                             </view>
                             <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" searchBarStyle="prominent" translatesAutoresizingMaskIntoConstraints="NO" id="w8y-Hp-gfv">
@@ -108,16 +121,18 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="TP7-N6-TOm" id="4IY-jv-zzk"/>
+                        <outlet property="musicBtn" destination="f7D-FE-t5o" id="3lt-Ha-LmB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="80.799999999999997" y="-39.130434782608695"/>
         </scene>
     </scenes>
     <resources>
         <image name="60" width="120" height="120"/>
         <image name="bg" width="1920" height="1200"/>
         <image name="pokelogo" width="699" height="177"/>
+        <image name="sound" width="32" height="32"/>
     </resources>
 </document>
