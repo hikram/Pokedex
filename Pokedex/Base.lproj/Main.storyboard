@@ -51,7 +51,7 @@
                                     <constraint firstAttribute="bottom" secondItem="f7D-FE-t5o" secondAttribute="bottom" constant="12" id="xCL-Mv-nTw"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" searchBarStyle="prominent" translatesAutoresizingMaskIntoConstraints="NO" id="w8y-Hp-gfv">
+                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" searchBarStyle="prominent" placeholder="Search Pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="w8y-Hp-gfv">
                                 <frame key="frameInset" minY="60" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -122,6 +122,7 @@
                     <connections>
                         <outlet property="collectionView" destination="TP7-N6-TOm" id="4IY-jv-zzk"/>
                         <outlet property="musicBtn" destination="f7D-FE-t5o" id="3lt-Ha-LmB"/>
+                        <outlet property="searchBar" destination="w8y-Hp-gfv" id="lON-39-nr8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
