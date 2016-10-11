@@ -99,10 +99,6 @@ class Pokemon {
                     self._height = height
                 }
                 
-//                if let type = dict["type"] as? String {
-//                    self._type = type
-//                }
-                
                 if let attack = dict["attack"] as? Int {
                     self._attack = "\(attack)"
                 }
@@ -111,10 +107,43 @@ class Pokemon {
                     self._defense = "\(defense)"
                 }
                 
-                print(self._weight)
-                print(self._height)
-                print(self._attack)
-                print(self._defense)
+                if let types = dict["types"] as? [Dictionary<String, String>], types.count > 0 {
+                    if let name = types[0]["name"] {
+                        self._type = name.capitalized
+                    }
+                    if types.count > 1 {
+                        for type in 1..<types.count {
+                            if let name = types[type]["name"] {
+                                self._type! += " / \(name.capitalized)"
+                            }
+                        }
+                    }
+                }
+                else {
+                    self._type = ""
+                }
+                
+                if let descArr = dict["descriptions"] as? [Dictionary<String, String>], descArr.count > 0 {
+                    if let url = descArr[0]["resource_uri"] {
+                        
+                        let descURL = URL_BASE + url
+                        
+                        Alamofire.request(descURL).responseJSON(completionHandler: { (response) in
+                            if let descDict = response.result.value as? Dictionary<String, Any> {
+                                if let desc = descDict["description"] as? String {
+                                    self._description = desc
+                                    
+                                }
+                            }
+                            
+                            completed()
+
+                        })
+                    }
+                } else {
+                    self._description = ""
+                }
+
             }
             
             completed()
